@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package cade_analytics;
+
+service CadeAnalytics {
+    rpc SendEvents(stream Event) returns (Empty);
+}
+
+message Event {
+    string timestamp = 1;
+    string usuario_id = 2;
+    string evento = 3;
+    string produto = 4;
+}
+
+message Empty {}

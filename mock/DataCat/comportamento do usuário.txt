@@ -1,0 +1,43 @@
+Timestamp | Type | Message
+2024-05-14 14:14:45.539746 | comportamento do usuário | User a17084eb-6c2a-4fd1-a75b-7888a7ad03ac purchase Laptop
+2024-05-14 14:14:50.555256 | comportamento do usuário | User 0a193434-e7c1-4690-a007-0f7536605120 view product Headphones
+2024-05-14 14:14:51.557705 | comportamento do usuário | User cc55577f-0420-41fe-a4c9-6ab5d2871ae3 add to cart Smartwatch
+2024-05-14 14:15:02.585856 | comportamento do usuário | User 54762764-e969-4941-92d9-78d4a2929f98 view product Smartwatch
+2024-05-14 14:15:05.590262 | comportamento do usuário | User 1edc0be9-a7ef-4c38-a237-717a04c9eb92 view product Laptop
+2024-05-14 14:15:07.600356 | comportamento do usuário | User 1cd2ff27-c1ee-401e-ab35-e4b39e1cb8f3 add to cart Smartphone
+2024-05-14 14:15:09.606796 | comportamento do usuário | User 64453223-44a4-4348-8b34-fc89c526a6c2 purchase Smartwatch
+2024-05-14 14:15:12.612407 | comportamento do usuário | User 191b976c-43ea-4c7f-a6bb-ee40a61080f6 add to cart Headphones
+2024-05-14 14:15:17.638840 | comportamento do usuário | User 8895514b-a000-47e3-a8a2-659e1e71f416 purchase Smartwatch
+2024-05-14 14:15:21.646794 | comportamento do usuário | User 1c0c9e0b-90a2-482c-991b-a2855024dd0d add to cart Laptop
+2024-05-14 14:15:25.655525 | comportamento do usuário | User cd12442c-dac2-416c-aa6c-459de37df9f1 add to cart Smartphone
+2024-05-14 14:15:34.694216 | comportamento do usuário | User b61beede-4b3e-416a-b8ee-fbed9ee91d40 add to cart Book
+2024-05-14 14:15:35.697608 | comportamento do usuário | User 46ef3bdd-7b31-4eaa-a6d9-1af69116c669 purchase Smartwatch
+2024-05-14 14:15:42.581204 | comportamento do usuário | User 3a539992-7c32-4c22-99eb-b1fa62ab1692 view product Congress
+2024-05-14 14:15:50.608324 | comportamento do usuário | User 75140fcf-fa01-4681-b58c-9b8bb51704cc view product feel
+2024-05-14 14:15:53.613829 | comportamento do usuário | User 9a2c3ddd-dfe4-4f03-957c-58158933b274 purchase vote
+2024-05-14 14:16:03.700176 | comportamento do usuário | User 713d590b-6e3e-43f5-a766-bcc195806a7c view product vote
+2024-05-14 14:16:04.706589 | comportamento do usuário | User f78d5657-ecd3-4b7a-afc3-c2a5d90ee765 add to cart Congress
+2024-05-14 14:16:07.716834 | comportamento do usuário | User 1ebd0792-ddcf-4b6a-9dc1-641baf33636e view product Congress
+2024-05-14 14:16:08.757484 | comportamento do usuário | User b46b4e62-fe9c-445d-b318-794cf1a608c3 view product Congress
+2024-05-14 14:16:09.758775 | comportamento do usuário | User 4d5fdbfd-1be5-4370-8794-98ccfd014c29 add to cart feel
+2024-05-14 14:16:10.760510 | comportamento do usuário | User 256639c8-f24d-48fc-ab74-5fdbbb43cd9d purchase most
+2024-05-14 14:16:16.798853 | comportamento do usuário | User 9ff2b747-6edb-45d3-b536-e4ecaec96028 purchase most
+2024-05-14 14:16:24.837373 | comportamento do usuário | User af60bdc4-7270-4007-abb9-da1c94678bc5 add to cart vote
+2024-05-14 14:16:25.839119 | comportamento do usuário | User 9b8bea3b-1dce-4568-9800-23ba222107a5 add to cart most
+2024-05-14 14:16:27.843778 | comportamento do usuário | User 59a6ebd9-2d5b-4fe2-a2d4-e1e5d74edd0e add to cart such
+2024-05-14 14:16:34.872625 | comportamento do usuário | User c1acd4ac-541c-4eb1-a91f-19313610b847 purchase vote
+2024-05-14 14:16:35.874514 | comportamento do usuário | User 3355c0f7-059e-47a1-894d-fd8ff4329761 add to cart vote
+2024-05-14 14:16:36.875806 | comportamento do usuário | User 386f2df4-1925-4fae-ae70-67d06a7f2569 purchase most
+2024-05-14 14:16:37.877249 | comportamento do usuário | User 7f0bacf8-f9b7-4e72-b334-4dd3c3334951 add to cart feel
+2024-05-14 14:16:40.881617 | comportamento do usuário | User 9565a94a-5126-417b-9f88-ca6b04e2539e view product feel
+2024-05-14 14:19:54.453646 | comportamento do usuário | User d4fa4c2f-4e86-447e-8aea-b201e48bc6ad add to cart vote
+2024-05-14 14:19:56.456655 | comportamento do usuário | User 4fef8125-f111-4933-b6be-28b459764016 view product feel
+2024-05-14 14:19:57.459164 | comportamento do usuário | User 7123d584-cd12-4e0a-b72c-8be7fb775d13 add to cart vote
+2024-05-14 14:20:01.467015 | comportamento do usuário | User bbd43050-7e45-4c7a-8c4d-ddbbf39a0b21 purchase vote
+2024-05-14 14:20:07.477167 | comportamento do usuário | User f87c40dc-1056-40ea-aadf-cc48d5eb2013 add to cart such
+2024-05-14 14:20:13.514024 | comportamento do usuário | User 1d08eb8c-73e7-4d02-b439-a990f8f5ea7d view product most
+2024-05-14 14:20:15.517070 | comportamento do usuário | User e702bd5e-bf4c-4e5d-b148-2a843901f9dd view product vote
+2024-05-14 14:20:23.531971 | comportamento do usuário | User 8da17971-7708-4d00-b141-ad680ec455a8 purchase vote
+2024-05-14 14:21:08.138543 | comportamento do usuário | User 8e8e60fa-a72e-4264-922a-95226638c326 purchase would
+2024-05-14 14:21:09.142309 | comportamento do usuário | User b8444fef-940b-4797-aade-268bdd541b23 purchase significant
+2024-05-14 14:21:15.177421 | comportamento do usuário | User a83cbb2d-e439-4a90-b539-04cf295cf21e view product rule

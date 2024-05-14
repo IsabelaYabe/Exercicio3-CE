@@ -1,0 +1,49 @@
+Timestamp | Type | Message
+2024-05-14 14:14:46.543562 | notificação de falhas | Failure in add to cart Book at court.tiff:35 severity low
+2024-05-14 14:14:47.545271 | notificação de falhas | Failure in view product Smartphone at throughout.odp:62 severity low
+2024-05-14 14:14:52.560032 | notificação de falhas | Failure in add to cart Headphones at should.wav:7 severity medium
+2024-05-14 14:14:55.567287 | notificação de falhas | Failure in view product Headphones at between.bmp:33 severity medium
+2024-05-14 14:14:56.569560 | notificação de falhas | Failure in purchase Smartwatch at toward.webm:72 severity medium
+2024-05-14 14:14:59.577419 | notificação de falhas | Failure in purchase Smartwatch at ten.numbers:19 severity medium
+2024-05-14 14:15:01.583279 | notificação de falhas | Failure in view product Headphones at design.js:47 severity low
+2024-05-14 14:15:04.588535 | notificação de falhas | Failure in view product Smartwatch at very.mov:86 severity high
+2024-05-14 14:15:16.636981 | notificação de falhas | Failure in view product Smartwatch at rock.wav:21 severity high
+2024-05-14 14:15:20.645200 | notificação de falhas | Failure in purchase Smartwatch at better.wav:61 severity high
+2024-05-14 14:15:22.648119 | notificação de falhas | Failure in view product Laptop at yeah.ods:99 severity medium
+2024-05-14 14:15:30.683780 | notificação de falhas | Failure in add to cart Smartwatch at natural.mp3:38 severity high
+2024-05-14 14:15:31.685144 | notificação de falhas | Failure in add to cart Laptop at performance.js:3 severity high
+2024-05-14 14:15:32.686885 | notificação de falhas | Failure in view product Smartwatch at eat.jpeg:25 severity high
+2024-05-14 14:15:33.688623 | notificação de falhas | Failure in add to cart Smartwatch at message.flac:64 severity low
+2024-05-14 14:15:43.583460 | notificação de falhas | Failure in purchase feel at might.html:6 severity medium
+2024-05-14 14:15:47.600850 | notificação de falhas | Failure in add to cart feel at reason.css:48 severity high
+2024-05-14 14:15:48.602646 | notificação de falhas | Failure in add to cart feel at generation.json:47 severity low
+2024-05-14 14:15:51.610103 | notificação de falhas | Failure in purchase most at speak.key:55 severity medium
+2024-05-14 14:15:52.611948 | notificação de falhas | Failure in add to cart such at where.wav:12 severity high
+2024-05-14 14:15:54.615888 | notificação de falhas | Failure in add to cart vote at spring.flac:66 severity high
+2024-05-14 14:15:56.618296 | notificação de falhas | Failure in view product Congress at answer.mp4:6 severity medium
+2024-05-14 14:15:57.630396 | notificação de falhas | Failure in purchase feel at heavy.js:76 severity high
+2024-05-14 14:15:58.645996 | notificação de falhas | Failure in purchase Congress at top.webm:54 severity high
+2024-05-14 14:16:02.689202 | notificação de falhas | Failure in purchase Congress at difference.key:43 severity medium
+2024-05-14 14:16:06.715614 | notificação de falhas | Failure in purchase feel at agree.bmp:57 severity high
+2024-05-14 14:16:14.793664 | notificação de falhas | Failure in add to cart Congress at truth.webm:54 severity low
+2024-05-14 14:16:18.810861 | notificação de falhas | Failure in purchase such at help.txt:74 severity low
+2024-05-14 14:16:19.829733 | notificação de falhas | Failure in view product feel at hotel.mp3:92 severity high
+2024-05-14 14:16:20.830957 | notificação de falhas | Failure in view product vote at to.jpeg:53 severity high
+2024-05-14 14:16:21.832377 | notificação de falhas | Failure in add to cart such at probably.json:92 severity low
+2024-05-14 14:16:23.835944 | notificação de falhas | Failure in purchase Congress at although.jpeg:98 severity medium
+2024-05-14 14:16:31.867523 | notificação de falhas | Failure in add to cart vote at take.wav:82 severity low
+2024-05-14 14:16:38.878647 | notificação de falhas | Failure in add to cart such at clear.wav:7 severity medium
+2024-05-14 14:19:47.431153 | notificação de falhas | Failure in add to cart such at human.flac:3 severity medium
+2024-05-14 14:19:50.442925 | notificação de falhas | Failure in view product feel at morning.wav:14 severity high
+2024-05-14 14:19:58.461839 | notificação de falhas | Failure in add to cart vote at story.json:63 severity low
+2024-05-14 14:19:59.464186 | notificação de falhas | Failure in view product such at down.mp3:67 severity high
+2024-05-14 14:20:00.465507 | notificação de falhas | Failure in purchase Congress at decision.key:75 severity high
+2024-05-14 14:20:05.474080 | notificação de falhas | Failure in purchase most at list.webm:99 severity low
+2024-05-14 14:20:18.523153 | notificação de falhas | Failure in purchase such at another.key:64 severity high
+2024-05-14 14:20:21.528936 | notificação de falhas | Failure in purchase most at themselves.flac:69 severity medium
+2024-05-14 14:20:22.530628 | notificação de falhas | Failure in add to cart most at should.doc:94 severity medium
+2024-05-14 14:20:29.544110 | notificação de falhas | Failure in purchase such at media.csv:42 severity high
+2024-05-14 14:20:32.549540 | notificação de falhas | Failure in view product vote at a.mp4:89 severity medium
+2024-05-14 14:21:05.123609 | notificação de falhas | Failure in purchase rule at hold.jpeg:30 severity medium
+2024-05-14 14:21:13.173640 | notificação de falhas | Failure in add to cart would at world.pptx:23 severity low
+2024-05-14 14:21:19.186702 | notificação de falhas | Failure in view product rule at themselves.flac:31 severity medium

@@ -1,0 +1,42 @@
+Timestamp | Type | Message
+2024-05-14 14:14:53.562308 | auditoria | User 3c64f35e-fcea-4f36-80fc-eeb5bc3ca03f performed update profile
+2024-05-14 14:14:57.572722 | auditoria | User 5a0424e3-ef2f-413b-9bd9-528b23a7412c performed update profile
+2024-05-14 14:15:00.580182 | auditoria | User 12d4ac90-b294-4fa4-90d5-0469128f7a3a performed logout
+2024-05-14 14:15:08.603522 | auditoria | User b2d51e4b-7c43-46c9-b6c9-c9075e2993cd performed update profile
+2024-05-14 14:15:14.616106 | auditoria | User 5516d411-9a3b-4cd1-a51e-150edfc6866b performed update profile
+2024-05-14 14:15:15.634509 | auditoria | User 8d7c7bca-40cc-4f23-8c54-ceddb989ca1e performed login
+2024-05-14 14:15:18.640997 | auditoria | User b8f9b266-7628-48b7-9988-510ad09e8712 performed logout
+2024-05-14 14:15:19.643653 | auditoria | User 3c208aa4-1ab7-4616-9c47-2fba228672d6 performed login
+2024-05-14 14:15:23.652686 | auditoria | User abd5b092-396f-42e8-96cb-16f7d7efe846 performed login
+2024-05-14 14:15:24.654065 | auditoria | User b28aaa6f-d5bf-411c-884e-0a6dee362aa8 performed change password
+2024-05-14 14:15:26.657148 | auditoria | User c1c175ca-3e0a-4a61-bf0a-a66a53c68e4d performed logout
+2024-05-14 14:15:28.662390 | auditoria | User 3bc5d126-0a61-4f6f-af90-cf15ae07dacc performed change password
+2024-05-14 14:15:41.524649 | auditoria | User 862820a7-7533-4c41-aa55-97082963e1bb performed logout
+2024-05-14 14:15:45.586342 | auditoria | User 73f282e3-0556-4376-b665-1c50f736a5ce performed update profile
+2024-05-14 14:15:46.588854 | auditoria | User 0e49d1fa-b561-4577-8bb8-61f2d4e73f11 performed logout
+2024-05-14 14:15:55.617036 | auditoria | User 145d7095-f52f-4cd3-8ea9-f4bacd6a10de performed change password
+2024-05-14 14:16:01.686392 | auditoria | User 9041a366-de56-4727-a116-22ce5400dd30 performed change password
+2024-05-14 14:16:05.713919 | auditoria | User 8422c4e6-f4c0-4f3c-8d48-13f622baddff performed logout
+2024-05-14 14:16:11.762534 | auditoria | User bd61f845-e8cb-4b07-800a-d8020120bd41 performed change password
+2024-05-14 14:16:13.791890 | auditoria | User dd1dc9f6-8aa3-4124-bc8d-307f8df98b5b performed change password
+2024-05-14 14:16:15.794941 | auditoria | User 08472d9c-8915-4002-856e-c5cc8ec3dfa3 performed change password
+2024-05-14 14:16:22.834128 | auditoria | User d6c196db-61f3-419d-a68a-42ab7c2312c6 performed change password
+2024-05-14 14:16:28.845511 | auditoria | User 9673ebc9-ac2b-4a92-8497-8e8d5a80c6e9 performed logout
+2024-05-14 14:16:29.846719 | auditoria | User a74b64ee-8785-41fd-8413-656ce39f3c68 performed login
+2024-05-14 14:19:49.440430 | auditoria | User f8be0f60-118d-4941-80ad-ac4488b90cf5 performed logout
+2024-05-14 14:19:55.455533 | auditoria | User 044b45ff-da46-4bee-b958-7e6691dffee5 performed update profile
+2024-05-14 14:20:02.468280 | auditoria | User 8b80ac7f-6e19-4531-a22b-797892d8f4d3 performed change password
+2024-05-14 14:20:04.472461 | auditoria | User 03e26630-19b2-4981-a642-096ee7243e0a performed update profile
+2024-05-14 14:20:08.479170 | auditoria | User 2b2bfda4-6078-46f0-89b2-370c288ce4d9 performed logout
+2024-05-14 14:20:10.482603 | auditoria | User 3736ce9a-413c-457e-9b92-8af65a9cbe13 performed login
+2024-05-14 14:20:12.512609 | auditoria | User eb25cd05-60c6-49ec-932c-93a9dafe07e9 performed logout
+2024-05-14 14:20:16.518529 | auditoria | User 0eba6994-2cc2-4068-87a7-9ab0562b815e performed logout
+2024-05-14 14:20:20.526942 | auditoria | User 382f324b-7621-422f-873e-35948b153890 performed logout
+2024-05-14 14:20:25.536346 | auditoria | User 6ae3ac92-4f54-422c-8f99-1975bd5e74a0 performed login
+2024-05-14 14:20:27.540083 | auditoria | User dda5d992-f4f2-4f76-9b15-96380716c19b performed change password
+2024-05-14 14:20:31.548479 | auditoria | User 26142ff2-7797-4566-acbe-d3767e92b6b7 performed logout
+2024-05-14 14:21:06.131323 | auditoria | User bcf69870-3ad3-49e1-96a5-baf4a6005849 performed logout
+2024-05-14 14:21:07.133443 | auditoria | User 18bbd376-e024-42f0-8223-433e15b7257d performed change password
+2024-05-14 14:21:12.172425 | auditoria | User 15289864-00b7-4e96-8d64-e9e32a2fa2e8 performed login
+2024-05-14 14:21:16.180044 | auditoria | User 9ff82a7f-541b-4c17-9591-5db024ff117f performed logout
+2024-05-14 14:21:17.183485 | auditoria | User 245af6aa-51e0-4d6f-be54-dff3902e04fb performed logout
