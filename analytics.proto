@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package analytics;
+
+service AnalyticsService {
+  rpc SendEvent (EventRequest) returns (EventResponse);
+}
+
+message EventRequest {
+  string json_data = 1;
+}
+
+message EventResponse {
+  bool success = 1;
+}
