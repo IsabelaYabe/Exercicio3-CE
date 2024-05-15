@@ -15,7 +15,7 @@ class AnalyticsServiceServicer(analytics_pb2_grpc.AnalyticsServiceServicer):
         # Inicializa um DataFrame para armazenar eventos recebidos
         self.df_eventos = pd.DataFrame(columns=['timestamp', 'usuario_id', 'evento', 'produto'])
 
-    def SendEvent(self, request):
+    def SendEvent(self, request, context):
         start_time = time.time()
         # Deserializa o JSON recebido em um DataFrame
         eventos = json.loads(request.json_data)
