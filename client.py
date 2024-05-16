@@ -15,25 +15,20 @@ def channel():
     return stub
 
 def cade_analytics():
-    
+    # Cria um stub para chamar métodos remotos no servidor
     stub = channel()
-
     event = {"timestamp": time.time()}
-
-    # Obtém a lista de produtos a partir da função definida
     produtos = ["Laptop", "Smartphone", "Book", "Headphones", "Smartwatch"]
-    # Lê os IDs dos usuários a partir de um arquivo CSV
     usuarios = pd.read_csv("mock/ContaVerde/usuarios.csv")['ID'].tolist()
-    # Lista para acumular eventos antes do envio
     acumulado_eventos = []
-    # Armazena o tempo do último envio para controlar o intervalo entre envios
+
+    # Armazena o tempo de início para controlar o intervalo de execução
+    start_time = time.time()
     last_sent_time = time.time()
-    
-    # Loop infinito para geração e envio contínuo de eventos
-    while True:
-        # Verifica se o tempo desde o último envio é maior ou igual a 5 segundos
+
+    # Loop para geração e envio contínuo de eventos, com duração de 3 minutos
+    while time.time() - start_time < 120:  # 180 segundos = 3 minutos
         if (time.time() - last_sent_time) >= 5.0:
-            # Se houver eventos acumulados, prepara para enviar
             if acumulado_eventos:
                 # Converte a lista de eventos para JSON
                 json_data = json.dumps(acumulado_eventos)
@@ -41,38 +36,32 @@ def cade_analytics():
                 event_request = analytics_pb2.EventRequest(json_data=json_data)
                 try:
                     print(f"Enviando {len(acumulado_eventos)} eventos...")
-                    # Tenta enviar o evento via gRPC e aguarda resposta
                     response = stub.SendEvent(event_request)
-                    # Verifica se o servidor respondeu com sucesso
                     if response.success:
                         print("Dados enviados com sucesso.")
                     else:
                         print("Falha ao enviar dados.")
                 except grpc.RpcError as e:
-                    # Trata erros na comunicação gRPC
                     print(f"Falha ao enviar dados: {e}")
-            
-            # Reinicia a lista de eventos acumulados e atualiza o tempo de último envio
-            acumulado_eventos = []
-            last_sent_time = time.time()
+                
+                # Reinicia a lista de eventos acumulados e atualiza o tempo de último envio
+                acumulado_eventos = []
+                last_sent_time = time.time()
         
-        # Seleciona um usuário e produto aleatoriamente para criar um evento
+        # Cria novo evento com dados aleatórios
         usuario_id = random.choice(usuarios)
         produto = random.choice(produtos)
         evento = {
-            "timestamp": datetime.now().isoformat(),  # Define o timestamp do evento
-            "usuario_id": usuario_id,  # ID do usuário para o evento
-            "evento": random.choice(["visualizou", "adicionou ao carrinho", "comprou"]),  # Tipo do evento
-            "produto": produto  # Produto envolvido no evento
+            "timestamp": datetime.now().isoformat(),
+            "created_time": time.time(),  
+            "usuario_id": usuario_id,
+            "evento": random.choice(["visualizou", "adicionou ao carrinho", "comprou"]),
+            "produto": produto
         }
-        
-        # Adiciona o evento criado à lista de eventos acumulados
         acumulado_eventos.append(evento)
-        # Pausa por um intervalo aleatório entre 1 a 2 segundos antes de criar o próximo evento
         time.sleep(random.randint(1, 2))
-        print(f"Time taken: {time.time() - event['timestamp']} seconds")
 
-# Ponto de entrada do script quando executado diretamente
+    print("A execução de 2 minutos de cade_analytics foi concluída.")
+
 if __name__ == '__main__':
-    # Chama a função principal para iniciar o envio de eventos
     cade_analytics()
