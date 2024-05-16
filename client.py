@@ -1,4 +1,3 @@
-# Importação de bibliotecas necessárias para o cliente gRPC e outras funcionalidades
 import grpc
 import analytics_pb2
 import analytics_pb2_grpc
@@ -8,28 +7,28 @@ import time
 from datetime import datetime
 import pandas as pd
 
-# Função para obter a lista de produtos disponíveis para simulação
-def get_products_list():
-    # Retorna uma lista estática de produtos
-    return ["Laptop", "Smartphone", "Book", "Headphones", "Smartwatch"]
-
-# Função principal que simula o envio de eventos de usuário para um servidor usando gRPC
-def cade_analytics():
+def channel():
     # Estabelece a conexão com o servidor gRPC no endereço localhost na porta 50051
     channel = grpc.insecure_channel('localhost:50051')
     # Cria um stub para chamar métodos remotos no servidor
     stub = analytics_pb2_grpc.AnalyticsServiceStub(channel)
-    event = {"data": "example", "timestamp": time.time()}
+    return stub
+
+def cade_analytics():
+    
+    stub = channel()
+
+    event = {"timestamp": time.time()}
 
     # Obtém a lista de produtos a partir da função definida
-    produtos = get_products_list()
+    produtos = ["Laptop", "Smartphone", "Book", "Headphones", "Smartwatch"]
     # Lê os IDs dos usuários a partir de um arquivo CSV
     usuarios = pd.read_csv("mock/ContaVerde/usuarios.csv")['ID'].tolist()
     # Lista para acumular eventos antes do envio
     acumulado_eventos = []
     # Armazena o tempo do último envio para controlar o intervalo entre envios
     last_sent_time = time.time()
-
+    
     # Loop infinito para geração e envio contínuo de eventos
     while True:
         # Verifica se o tempo desde o último envio é maior ou igual a 5 segundos
@@ -41,6 +40,7 @@ def cade_analytics():
                 # Cria uma requisição gRPC com os dados em JSON
                 event_request = analytics_pb2.EventRequest(json_data=json_data)
                 try:
+                    print(f"Enviando {len(acumulado_eventos)} eventos...")
                     # Tenta enviar o evento via gRPC e aguarda resposta
                     response = stub.SendEvent(event_request)
                     # Verifica se o servidor respondeu com sucesso
@@ -68,8 +68,8 @@ def cade_analytics():
         
         # Adiciona o evento criado à lista de eventos acumulados
         acumulado_eventos.append(evento)
-        # Pausa por um intervalo aleatório entre 1 a 5 segundos antes de criar o próximo evento
-        time.sleep(random.randint(1, 5))
+        # Pausa por um intervalo aleatório entre 1 a 2 segundos antes de criar o próximo evento
+        time.sleep(random.randint(1, 2))
         print(f"Time taken: {time.time() - event['timestamp']} seconds")
 
 # Ponto de entrada do script quando executado diretamente

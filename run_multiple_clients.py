@@ -1,11 +1,11 @@
 from multiprocessing import Process
-from stub_client import cade_analytics  # Importando a função do outro arquivo
+from client import cade_analytics  # Importando a função do outro arquivo
 
 def run_client():
     cade_analytics()  # Chama a função do cliente
 
 def main():
-    num_clients = 20  # Número de instâncias do cliente que você deseja executar
+    num_clients = 1 # Número de instâncias do cliente que você deseja executar
 
     # Criar e iniciar processos
     processes = []
@@ -17,6 +17,7 @@ def main():
     
     # Esperar todos os processos terminarem
     for process in processes:
+        print(f"Esperando o processo {process} terminar...")
         process.join()
 
 if __name__ == '__main__':
