@@ -61,7 +61,7 @@ def cade_analytics():
         time.sleep(random.random()*(10**(-104)))
 
     print(f"A execução de {seg} segundos de cade_analytics foi concluída.")
-    latencia = stub.GetLatency(analytics_pb2.LatencyRequest())
+    latencia = stub.getLatency(analytics_pb2.LatencyRequest())
     print(f"Tempo médio de latência: {latencia} segundos.")
 
 if __name__ == '__main__':

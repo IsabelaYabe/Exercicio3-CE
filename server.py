@@ -76,7 +76,7 @@ class AnalyticsServiceServicer(analytics_pb2_grpc.AnalyticsServiceServicer):
             with self.lock:
                 self.latencies_list.append(average_latency)
 
-    def getLatency(self):
+    def GetLatency(self):
         with self.lock:
             return sum(self.latencies_list) / len(self.latencies_list)
 
