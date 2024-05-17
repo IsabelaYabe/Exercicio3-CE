@@ -77,8 +77,9 @@ class AnalyticsServiceServicer(analytics_pb2_grpc.AnalyticsServiceServicer):
                 self.latencies_list.append(average_latency)
 
     def GetLatency(self):
-        with self.lock:
-            return sum(self.latencies_list) / len(self.latencies_list)
+        average_latency = sum(self.latencies_list) / len(self.latencies_list) if self.latencies_list else 0
+        return analytics_pb2.LatencyResponse(average_latency=average_latency)
+
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=multiprocessing.cpu_count()))

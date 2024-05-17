@@ -16,9 +16,8 @@ message EventResponse {
 }
 
 message LatencyRequest {
- 
 }
 
 message LatencyResponse {
-  double average_latency = 1;
+  float average_latency = 1;
 }
