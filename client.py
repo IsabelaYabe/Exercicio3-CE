@@ -9,7 +9,7 @@ import pandas as pd
 
 def channel():
     # Estabelece a conexão com o servidor gRPC no endereço localhost na porta 50051
-    channel = grpc.insecure_channel('localhost:50051')
+    channel = grpc.insecure_channel('localhost:50051') # passar o endereço do outro 
     # Cria um stub para chamar métodos remotos no servidor
     stub = analytics_pb2_grpc.AnalyticsServiceStub(channel)
     return stub
@@ -27,7 +27,7 @@ def cade_analytics():
     last_sent_time = time.time()
 
     # Loop para geração e envio contínuo de eventos, com duração de 3 minutos
-    while time.time() - start_time < 120:  # 180 segundos = 3 minutos
+    while time.time() - start_time < 40:  # 180 segundos = 3 minutos
         if (time.time() - last_sent_time) >= 5.0:
             if acumulado_eventos:
                 # Converte a lista de eventos para JSON
