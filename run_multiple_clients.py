@@ -2,7 +2,7 @@ from multiprocessing import Process
 from client import cade_analytics  
 
 def run_client():
-    cade_analytics()  # Chama a função do cliente
+    cade_analytics() 
 
 def main():
     num_clients = 1 # Número de instâncias do cliente que você deseja executar
