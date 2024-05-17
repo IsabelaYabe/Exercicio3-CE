@@ -5,7 +5,7 @@ def run_client():
     cade_analytics()  # Chama a função do cliente
 
 def main():
-    num_clients = 24 # Número de instâncias do cliente que você deseja executar
+    num_clients = 1 # Número de instâncias do cliente que você deseja executar
 
     # Criar e iniciar processos
     processes = []

@@ -9,7 +9,7 @@ import pandas as pd
 
 def channel():
     # Estabelece a conexão com o servidor gRPC no endereço localhost na porta 50051
-    channel = grpc.insecure_channel('192.168.0.162:50051') # passar o endereço do outro 
+    channel = grpc.insecure_channel('192.168.0.123:50051') # passar o endereço do outro 
     # Cria um stub para chamar métodos remotos no servidor
     stub = analytics_pb2_grpc.AnalyticsServiceStub(channel)
     return stub
