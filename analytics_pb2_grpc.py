@@ -44,12 +44,23 @@ class AnalyticsServiceStub(object):
                 request_serializer=analytics__pb2.EventRequest.SerializeToString,
                 response_deserializer=analytics__pb2.EventResponse.FromString,
                 _registered_method=True)
+        self.GetLatency = channel.unary_unary(
+                '/analytics.AnalyticsService/GetLatency',
+                request_serializer=analytics__pb2.LatencyRequest.SerializeToString,
+                response_deserializer=analytics__pb2.LatencyResponse.FromString,
+                _registered_method=True)
 
 
 class AnalyticsServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SendEvent(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetLatency(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -62,6 +73,11 @@ def add_AnalyticsServiceServicer_to_server(servicer, server):
                     servicer.SendEvent,
                     request_deserializer=analytics__pb2.EventRequest.FromString,
                     response_serializer=analytics__pb2.EventResponse.SerializeToString,
+            ),
+            'GetLatency': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLatency,
+                    request_deserializer=analytics__pb2.LatencyRequest.FromString,
+                    response_serializer=analytics__pb2.LatencyResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -90,6 +106,33 @@ class AnalyticsService(object):
             '/analytics.AnalyticsService/SendEvent',
             analytics__pb2.EventRequest.SerializeToString,
             analytics__pb2.EventResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetLatency(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/analytics.AnalyticsService/GetLatency',
+            analytics__pb2.LatencyRequest.SerializeToString,
+            analytics__pb2.LatencyResponse.FromString,
             options,
             channel_credentials,
             insecure,

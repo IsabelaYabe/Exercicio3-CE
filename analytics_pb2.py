@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0f\x61nalytics.proto\x12\tanalytics\"!\n\x0c\x45ventRequest\x12\x11\n\tjson_data\x18\x01 \x01(\t\" \n\rEventResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x32R\n\x10\x41nalyticsService\x12>\n\tSendEvent\x12\x17.analytics.EventRequest\x1a\x18.analytics.EventResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0f\x61nalytics.proto\x12\tanalytics\"!\n\x0c\x45ventRequest\x12\x11\n\tjson_data\x18\x01 \x01(\t\" \n\rEventResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\x10\n\x0eLatencyRequest\"*\n\x0fLatencyResponse\x12\x17\n\x0f\x61verage_latency\x18\x01 \x01(\x01\x32\x97\x01\n\x10\x41nalyticsService\x12>\n\tSendEvent\x12\x17.analytics.EventRequest\x1a\x18.analytics.EventResponse\x12\x43\n\nGetLatency\x12\x19.analytics.LatencyRequest\x1a\x1a.analytics.LatencyResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -25,6 +25,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_EVENTREQUEST']._serialized_end=63
   _globals['_EVENTRESPONSE']._serialized_start=65
   _globals['_EVENTRESPONSE']._serialized_end=97
-  _globals['_ANALYTICSSERVICE']._serialized_start=99
-  _globals['_ANALYTICSSERVICE']._serialized_end=181
+  _globals['_LATENCYREQUEST']._serialized_start=99
+  _globals['_LATENCYREQUEST']._serialized_end=115
+  _globals['_LATENCYRESPONSE']._serialized_start=117
+  _globals['_LATENCYRESPONSE']._serialized_end=159
+  _globals['_ANALYTICSSERVICE']._serialized_start=162
+  _globals['_ANALYTICSSERVICE']._serialized_end=313
 # @@protoc_insertion_point(module_scope)

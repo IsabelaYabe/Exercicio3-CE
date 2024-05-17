@@ -4,6 +4,7 @@ package analytics;
 
 service AnalyticsService {
   rpc SendEvent (EventRequest) returns (EventResponse);
+  rpc GetLatency (LatencyRequest) returns (LatencyResponse);
 }
 
 message EventRequest {
@@ -12,4 +13,12 @@ message EventRequest {
 
 message EventResponse {
   bool success = 1;
+}
+
+message LatencyRequest {
+ 
+}
+
+message LatencyResponse {
+  double average_latency = 1;
 }
