@@ -57,10 +57,10 @@ class AnalyticsServiceServicer(analytics_pb2_grpc.AnalyticsServiceServicer):
 
         analysis_time = time.time()  # Momento da análise
         # Imprime resultados das análises para verificar a eficácia do serviço
-        print("="*30)
-        print("Visualizações por minuto:\n", visualizados_por_minuto)
-        print("Compras por minuto:\n", comprados_por_minuto)
-        print("Usuários únicos por produto/minuto:\n", usuarios_unicos_por_produto)
+        #print("="*30)
+        #print("Visualizações por minuto:\n", visualizados_por_minuto)
+        #print("Compras por minuto:\n", comprados_por_minuto)
+        #print("Usuários únicos por produto/minuto:\n", usuarios_unicos_por_produto)
 
         # Calcular a latência para cada evento analisado
         latencies = []

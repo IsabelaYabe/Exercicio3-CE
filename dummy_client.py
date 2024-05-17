@@ -25,7 +25,7 @@ def cade_analytics():
     # Armazena o tempo de início para controlar o intervalo de execução
     start_time = time.time()
     last_sent_time = time.time()
-    seg = 20
+    seg = 10
     # Loop para geração e envio contínuo de eventos, com duração de 3 minutos
     while time.time() - start_time < seg:  
         if (time.time() - last_sent_time) >= 0.5:
