@@ -17,7 +17,6 @@ def channel():
 def cade_analytics():
     # Cria um stub para chamar métodos remotos no servidor
     stub = channel()
-    event = {"timestamp": time.time()}
     produtos = ["Laptop", "Smartphone", "Book", "Headphones", "Smartwatch"]
     usuarios = pd.read_csv("mock/ContaVerde/usuarios.csv")['ID'].tolist()
     acumulado_eventos = []
@@ -26,7 +25,7 @@ def cade_analytics():
     start_time = time.time()
     last_sent_time = time.time()
     seg = 10
-    # Loop para geração e envio contínuo de eventos, com duração de 3 minutos
+    # Loop para geração e envio contínuo de eventos, com duração estabelecida em seg
     while time.time() - start_time < seg:  
         if (time.time() - last_sent_time) >= 0.5:
             if acumulado_eventos:

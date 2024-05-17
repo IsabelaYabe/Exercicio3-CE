@@ -25,7 +25,6 @@ class AnalyticsServiceServicer(analytics_pb2_grpc.AnalyticsServiceServicer):
             self.threads.append(t)
     
     def SendEvent(self, request, context):
-        print("Recebendo eventos...")
         # Enfileira o evento recebido para ser processado posteriormente
         self.event_queue.put(request.json_data)
         return analytics_pb2.EventResponse(success=True)
