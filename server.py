@@ -26,7 +26,7 @@ class AnalyticsServiceServicer(analytics_pb2_grpc.AnalyticsServiceServicer):
             t.start()
             self.threads.append(t)
     
-    def SendEvent(self, request):
+    def SendEvent(self, request,context):
         # Enfileira o evento recebido para ser processado posteriormente
         self.event_queue.put(request.json_data)
         return analytics_pb2.EventResponse(success=True)
@@ -76,7 +76,7 @@ class AnalyticsServiceServicer(analytics_pb2_grpc.AnalyticsServiceServicer):
             with self.lock:
                 self.latencies_list.append(average_latency)
 
-    def GetLatency(self):
+    def GetLatency(self, request, context):
         average_latency = sum(self.latencies_list) / len(self.latencies_list) if self.latencies_list else 0
         return analytics_pb2.LatencyResponse(average_latency=average_latency)
 
