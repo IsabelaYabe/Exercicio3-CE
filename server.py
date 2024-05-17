@@ -17,10 +17,13 @@ class AnalyticsServiceServicer(analytics_pb2_grpc.AnalyticsServiceServicer):
     def __init__(self):
         self.df_eventos = pd.DataFrame(columns=['timestamp', 'usuario_id', 'evento', 'produto'])
         self.event_queue = Queue()  
-        self.lock = threading.Lock()
-        self.processing_thread = threading.Thread(target=self.process_events)
-        self.processing_thread.start()
-        self.latencies = []
+        self.lock = threading.Lock()  
+        self.num_processing_threads = 4 
+        self.threads = []
+        for _ in range(self.num_processing_threads):
+            t = threading.Thread(target=self.process_events)
+            t.start()
+            self.threads.append(t)
 
     def SendEvent(self, request, context):
         print("Recebendo eventos...")
@@ -31,60 +34,37 @@ class AnalyticsServiceServicer(analytics_pb2_grpc.AnalyticsServiceServicer):
     def process_events(self):
         while True:
             json_data = self.event_queue.get()
-            if json_data is None:  
+            if json_data is None:
                 break
-
+            
             eventos = json.loads(json_data)
             df_novos_eventos = pd.DataFrame(eventos)
             df_novos_eventos['timestamp'] = pd.to_datetime(df_novos_eventos['timestamp'])
-            
-            # Usa o lock durante a atualização do DataFrame
+    
+            # Atualiza o DataFrame principal dentro de um lock
             with self.lock:
                 self.df_eventos = pd.concat([self.df_eventos, df_novos_eventos], ignore_index=True)
+                df_copy = self.df_eventos.copy()
+    
+            # Analisa os dados fora do lock, uma vez que df_copy é agora um objeto separado e seguro
+            self.perform_analysis(df_copy)
 
-            # Realiza análises baseadas nos dados atualizados
-            self.perform_analysis()
+    def perform_analysis(self, df):
 
-    def perform_analysis(self):
-
-        # Garante que a leitura do DataFrame seja thread-safe
-        with self.lock:
-            current_time = datetime.now()
-            one_minute_ago = current_time - pd.Timedelta(minutes=1)
-            one_hour_ago = current_time - pd.Timedelta(hours=1)
-
-            analysis_time = time.time()  # Momento da análise
-
-            df_last_minute = self.df_eventos[(self.df_eventos['timestamp'] >= one_minute_ago) & (self.df_eventos['timestamp'] <= current_time)]
-            df_last_hour = self.df_eventos[(self.df_eventos['timestamp'] >= one_hour_ago) & (self.df_eventos['timestamp'] <= current_time)]
+        current_time = datetime.now()
+        one_minute_ago = current_time - pd.Timedelta(minutes=1)
+        df_last_minute = df[(df['timestamp'] >= one_minute_ago) & (df['timestamp'] <= current_time)]
 
         # Filtra eventos ocorridos no último minuto para análises em tempo real
-        df_last_minute = self.df_eventos[(self.df_eventos['timestamp'] >= one_minute_ago) & (self.df_eventos['timestamp'] <= current_time)]
         visualizados_por_minuto = df_last_minute[df_last_minute['evento'] == 'visualizou'].groupby('produto').count()['evento']
         comprados_por_minuto = df_last_minute[df_last_minute['evento'] == 'comprou'].groupby('produto').count()['evento']
         usuarios_unicos_por_produto = df_last_minute[df_last_minute['evento'] == 'visualizou'].groupby('produto')['usuario_id'].nunique()
-
-        # Filtra eventos da última hora para criar rankings de produtos
-        df_last_hour = self.df_eventos[(self.df_eventos['timestamp'] >= one_hour_ago) & (self.df_eventos['timestamp'] <= current_time)]
-        ranking_compras = df_last_hour[df_last_hour['evento'] == 'comprou'].groupby('produto').count()['evento'].sort_values(ascending=False)
-        ranking_visualizados = df_last_hour[df_last_hour['evento'] == 'visualizou'].groupby('produto').count()['evento'].sort_values(ascending=False)
 
         # Imprime resultados das análises para verificar a eficácia do serviço
         print("="*30)
         print("Visualizações por minuto:\n", visualizados_por_minuto)
         print("Compras por minuto:\n", comprados_por_minuto)
         print("Usuários únicos por produto/minuto:\n", usuarios_unicos_por_produto)
-        print("Ranking de produtos mais comprados na última hora:\n", ranking_compras.head())
-        print("Ranking de produtos mais visualizados na última hora:\n", ranking_visualizados.head())
-            # Calcular a latência para cada evento analisado
-        for index, row in df_last_minute.iterrows():
-            event_latency = analysis_time - row['created_time']
-            self.latencies.append(event_latency)
-    
-        # Periodicamente (ou no final), calcular e imprimir o tempo médio de latência
-        if self.latencies:
-            average_latency = sum(self.latencies) / len(self.latencies)
-            print("Tempo médio de latência: {:.2f} segundos".format(average_latency))
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=multiprocessing.cpu_count()))
@@ -96,10 +76,11 @@ def serve():
         while True:
             time.sleep(86400)  # Mantém o servidor rodando indefinidamente
     except KeyboardInterrupt:
-        servicer.event_queue.put(None) 
-        servicer.processing_thread.join()
+        for _ in range(servicer.num_processing_threads):
+            servicer.event_queue.put(None)  # Encerra cada thread de processamento
+        for t in servicer.threads:
+            t.join()
         server.stop(0)
-        print("Servidor interrompido.")
 
 if __name__ == '__main__':
     serve()
