@@ -19,12 +19,13 @@ class AnalyticsServiceServicer(analytics_pb2_grpc.AnalyticsServiceServicer):
         self.df_eventos = pd.DataFrame(columns=['created_time', 'timestamp', 'usuario_id', 'evento', 'produto'])
         self.event_queue = Queue()  
         self.lock = threading.Lock()
+        self.threads = []
+        for _ in range(multiprocessing.cpu_count()):  
             t = threading.Thread(target=self.process_events)
             t.start()
             self.threads.append(t)
-    
+           
     def SendEvent(self, request,context):
-        # Enfileira o evento recebido para ser processado posteriormente
         self.event_queue.put(request.json_data)
         return analytics_pb2.EventResponse(success=True)
 
