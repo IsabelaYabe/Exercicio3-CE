@@ -77,7 +77,7 @@ def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=multiprocessing.cpu_count()))
     servicer = AnalyticsServiceServicer()
     analytics_pb2_grpc.add_AnalyticsServiceServicer_to_server(servicer, server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port('192.168.0.123:50051')
     server.start()
     try:
         while True:
